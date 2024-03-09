@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">Kevent</string>
+    <string name="app_name">Kevents</string>
+    <string name="logo">KEVENT</string>
+    <string name="switchBar">SWITCH</string>
 </resources>
