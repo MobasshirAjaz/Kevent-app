@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".MainActivity">
+
 
     <TextView
         android:id="@+id/kevent_title"
         android:layout_width="200dp"
         android:layout_height="70dp"
-        android:layout_marginTop="30dp"
-        android:text="@string/logo"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/adamina"
+        android:text="KEVENTS"
         android:textAlignment="center"
-        android:textSize="45sp"
+        android:textSize="37sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -25,8 +28,9 @@
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="-30dp"
         android:text="@string/switchBar"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,35 +48,20 @@
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
     <ScrollView
-        android:layout_width="389dp"
-        android:layout_height="617dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="1dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
         app:layout_constraintTop_toBottomOf="@+id/textView11">
 
         <LinearLayout
-            android:id="@+id/linearLayout_scroll"
+            android:id="@+id/container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/event_card_1"
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/rectangle"
-                android:gravity="center_horizontal"
-                android:paddingLeft="4dp"
-                android:paddingRight="4dp" />
+
 
         </LinearLayout>
     </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
