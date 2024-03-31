@@ -10,6 +10,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.view.View;
 
@@ -42,11 +43,18 @@ public class MainActivity extends AppCompatActivity {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                LinearLayout container = findViewById(R.id.container);
-                add_card(connect_database(), container);
+                final String response = connect_database();
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        LinearLayout scroll = findViewById(R.id.container);
+                        add_card(response, scroll);
+                    }
+                });
             }
         }).start();
     }
+
 
     public String connect_database() {
         System.out.println("no");
@@ -71,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
         return s.hasNext() ? s.next() : "";
     }
 
-    public void add_card(String response, LinearLayout container) {
+    public void add_card(String response, LinearLayout scroll) {
         try {
             // Convert the response string to a JSONArray
             JSONArray jsonArray = new JSONArray(response);
@@ -118,8 +126,9 @@ public class MainActivity extends AppCompatActivity {
                 );
                 layoutParams.setMargins(16, 14, 16, 14);
                 cardView.setLayoutParams(layoutParams);
-                cardView.setCardBackgroundColor(Color.WHITE);
+                cardView.setCardBackgroundColor(Color.rgb(173,216,255));
                 cardView.setRadius(20);
+
 
 
                 // Create a LinearLayout for the CardView content
@@ -173,6 +182,7 @@ public class MainActivity extends AppCompatActivity {
                 textView3.setText(startdate);
                 textView3.setTextColor(Color.BLACK);
                 textView3.setGravity(Gravity.END);
+                textView3.setTypeface(textView1.getTypeface(), Typeface.BOLD);
 
                 // Add the TextViews to the LinearLayout
                 linearLayout.addView(textView1);
@@ -183,7 +193,7 @@ public class MainActivity extends AppCompatActivity {
                 cardView.addView(linearLayout);
 
                 // Add the CardView to the container
-                container.addView(cardView);
+                scroll.addView(cardView);
             }
         } catch (JSONException e) {
             e.printStackTrace();
