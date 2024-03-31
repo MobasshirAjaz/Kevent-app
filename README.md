@@ -28,4 +28,9 @@
  - Now open the the kevent folder in android studio. Wait for all the graddle builds to complete.
  - Click on the play button on the top. The app should run in a shortwhile.
 
+**Here's a video link showing the app's working:**
+https://youtu.be/8h0oHj2zYgo
+
 **p.s:** To be able to run the app in phone, we would have to host the server in a real server, which was out of our expertise.
+
+
