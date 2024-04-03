@@ -2,7 +2,7 @@
 
 **Team members**
 
- - Ayush Dev (2205222)
+ - Ayush Dev (2205196)
  - Daithoulung Rongmai(2205203)
  - Mobasshir Ajaz (2205222)
  - Isha Raj (22052388)
